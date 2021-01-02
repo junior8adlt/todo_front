@@ -1,0 +1,34 @@
+.todos-table {
+  background-color: var(--white);
+  padding: 1rem;
+}
+
+.todos-table .actions {
+  position: relative;
+  display: contents;
+}
+.todos-table .separation {
+  width: 0.75px;
+  height: 32px;
+  position: absolute;
+  top: 5px;
+  border: 0.5px solid var(--normal-input-border);
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
+  .todos-table .actions {
+    display: flex;
+  }
+  .todos-table .actions input {
+    margin-right: initial !important;
+    width: 52%;
+    padding: 0rem;
+  }
+  .todos-table .actions button {
+    margin-left: initial !important;
+    width: 48%;
+  }
+  .todos-table .separation {
+    left: 54%;
+  }
+}

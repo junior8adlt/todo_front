@@ -1,0 +1,177 @@
+/* Define Global Styles */
+:root {
+  --main-blue: #3c5cbf;
+  --completed-green: #00875f;
+  --pending-gray: #8b939e;
+  --hover-white: #e4e5e9;
+  --hover-outline-blue: #393f57;
+  --normal-input-border: #c7cad1;
+  --error-color: #a60b2b;
+  --text-color: #1d223f;
+  --input-placeholder-color: #717787;
+  --white: #fff;
+}
+@font-face {
+  font-family: "Fuse Regular";
+  src: url("../fonts/Fuse-Regular.ttf");
+}
+@font-face {
+  font-family: "Fuse Light";
+  src: url("../fonts/Fuse-Light.ttf");
+}
+@font-face {
+  font-family: "Kievit Bold";
+  src: url("../fonts/Kievit_Bold.ttf");
+}
+@font-face {
+  font-family: "Sultan";
+  src: url("../fonts/Sultan.ttf");
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Sultan";
+  color: var(--text-color);
+}
+table {
+  color: var(--text-color);
+}
+thead {
+  color: var(--text-color);
+}
+tbody {
+  color: var(--text-color);
+}
+input {
+  padding: 0.5rem;
+  border: 1.5px solid var(--normal-input-border);
+  transition: 0.2s all ease-in;
+  outline: none;
+}
+input:hover {
+  border: 1.5px solid var(--hover-outline-blue);
+}
+input:focus {
+  border: 1.5px solid var(--main-blue);
+}
+input::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: var(--input-placeholder-color);
+}
+input::-moz-placeholder {
+  /* Firefox 19+ */
+  color: var(--input-placeholder-color);
+}
+input:-ms-input-placeholder {
+  /* IE 10+ */
+  color: var(--input-placeholder-color);
+}
+input:-moz-placeholder {
+  /* Firefox 18- */
+  color: var(--input-placeholder-color);
+}
+input:focus::-webkit-input-placeholder {
+  /* Chrome/Opera/Safari */
+  color: var(--text-color);
+}
+input:focus::-moz-placeholder {
+  /* Firefox 19+ */
+  color: var(--text-color);
+}
+input:focus:-ms-input-placeholder {
+  /* IE 10+ */
+  color: var(--text-color);
+}
+input:focus:-moz-placeholder {
+  /* Firefox 18- */
+  color: var(--text-color);
+}
+
+textarea {
+  border: 1.5px solid var(--normal-input-border);
+  transition: 0.1s all ease-in;
+  outline: none;
+}
+textarea:hover {
+  border: 1.5px solid var(--hover-outline-blue);
+}
+textarea:focus {
+  border: 1.5px solid var(--main-blue);
+}
+select {
+  padding: 0.5rem 1rem;
+  border: 1.5px solid var(--normal-input-border);
+  transition: 0.2s all ease-in;
+  outline: none;
+}
+select:hover {
+  border: 1.5px solid var(--hover-outline-blue);
+}
+select:focus {
+  border: 1.5px solid var(--main-blue);
+}
+.completed {
+  color: var(--completed-green);
+  font-size: 25px;
+}
+.pending {
+  color: var(--pending-gray);
+  font-size: 25px;
+}
+.pointer {
+  cursor: pointer;
+}
+.bolded {
+  font-weight: bold;
+}
+.main-btn {
+  padding: 0.7rem 1rem;
+  color: var(--main-blue);
+  border: none;
+  outline: none;
+  background-color: var(--white);
+  transition: 0.2s all ease-in;
+  border-radius: 3px;
+}
+.main-btn:hover {
+  background-color: var(--hover-white);
+}
+.main-btn:focus {
+  outline: none;
+}
+.cancel-btn {
+  padding: 0.7rem 1rem;
+  color: var(--text-color);
+  border: none;
+  outline: none;
+  background-color: var(--hover-white);
+  transition: 0.2s all ease-in;
+  border-radius: 3px;
+}
+.cancel-btn:hover {
+  background-color: var(--hover-white);
+}
+.cancel-btn:focus {
+  outline: none;
+}
+.save-btn {
+  padding: 0.7rem 1rem;
+  color: var(--white);
+  border: none;
+  outline: none;
+  background-color: var(--main-blue);
+  transition: 0.2s all ease-in;
+  border-radius: 3px;
+}
+.save-btn:focus {
+  outline: none;
+}
+.fl-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
