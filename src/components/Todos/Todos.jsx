@@ -25,8 +25,8 @@ const Todos = () => {
   const todoSelected = useSelector((store) => store.todos.todoSelected);
   const [filterDate, setFilterDate] = useState("");
   const [isOpenModal, openModal, closeModal] = useModal();
-  useEffect(async () => {
-    await dispatch(getAllTodos());
+  useEffect(() => {
+    dispatch(getAllTodos());
   }, [dispatch]);
 
   const renderTodos = (todo) => {

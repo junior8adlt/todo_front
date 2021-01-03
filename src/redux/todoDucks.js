@@ -176,7 +176,6 @@ export const updateTodo = (params) => async (dispatch, getState) => {
 
 export const deleteTodo = (todo) => async (dispatch, getState) => {
   try {
-    const todos = getState().todos.todos;
     await axios({
       method: "delete",
       url: `${apiUrl}/todos/${+todo.id}`,
