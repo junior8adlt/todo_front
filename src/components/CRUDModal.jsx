@@ -15,6 +15,9 @@ const CRUDModal = ({
   const dispatch = useDispatch();
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
+  const [errorTitle, setErrorTitle] = useState(null)
+  const [errorDesc, setErrorDesc] = useState(null)
+
   useEffect(() => {
     if (isEdit) {
       setTitle(todoSelected.title);
@@ -23,6 +26,9 @@ const CRUDModal = ({
   }, [todoSelected, isEdit]);
   const closeAndCleanModal = () => {
     closeModal();
+    setErrorTitle(null)
+    setErrorDesc(null)
+
     if (isEdit) {
       dispatch(closeSidebar());
     } else {
@@ -39,24 +45,31 @@ const CRUDModal = ({
     };
     if (isEdit) {
       if (!title.trim()) {
-        console.log("titulo no puede estar vacio");
+        setErrorTitle("Required")
         return;
+      }else{
+        setErrorTitle(null)
       }
       if (!desc.trim()) {
-        console.log("descripcion no puede estar vacio");
+        setErrorDesc("Required")
         return;
+      }else {
+        setErrorDesc(null)
       }
       await dispatch(updateTodo(params));
       closeAndCleanModal();
     } else {
-      console.log("entre");
       if (!title.trim()) {
-        console.log("titulo no puede estar vacio");
+        setErrorTitle("Required")
         return;
+      }else{
+        setErrorTitle(null)
       }
       if (!desc.trim()) {
-        console.log("descripcion no puede estar vacio");
+        setErrorDesc("Required")
         return;
+      }else {
+        setErrorDesc(null)
       }
       console.log(filterDate);
       await dispatch(createTodo(params, filterDate));
@@ -82,6 +95,7 @@ const CRUDModal = ({
             value={title}
             onChange={(e) => setTitle(e.target.value)}
           />
+          <p className="text-error">{errorTitle && errorTitle}</p>
           <label htmlFor='text_description'>Description</label>
           <textarea
             cols='20'
@@ -91,7 +105,8 @@ const CRUDModal = ({
             value={desc}
             onChange={(e) => setDesc(e.target.value)}
           ></textarea>
-          <div className=' buttons d-flex mt-5 justify-content-end'>
+          <p className="text-error">{errorDesc && errorDesc}</p>
+          <div className=' buttons d-flex mt-3 justify-content-end'>
             <button
               className='cancel-btn mr-4'
               onClick={() => closeAndCleanModal()}

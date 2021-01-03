@@ -127,6 +127,9 @@ select:focus {
 .bolded {
   font-weight: bold;
 }
+.text-error {
+  color: var(--error-color);
+}
 .main-btn {
   padding: 0.7rem 1rem;
   color: var(--main-blue);
