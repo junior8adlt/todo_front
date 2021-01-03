@@ -59,6 +59,8 @@ For the redux we use the **Ducks** Structure to have everything (reducers, types
 │  │  ├─ Todos/          # Component that render the todo list
 │  │  ├─ CRUDModal       # Component for a crud todo
 │  │
+|  ├─ doc/               # Project operation user manual
+|  |
 │  ├─ hooks/             # Custom hooks
 │  │  ├─ useModal/       # Custom hook for the modals
 │  │  └─ …               # Documentation files
