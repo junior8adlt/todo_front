@@ -97,7 +97,7 @@ This alert works through redux to activate it, the general duck must be imported
 dispatch(
   showGeneralAlert({
     msg: "TODOS loaded successful", //Message to display
-    show: true, // to display the aler true/false
+    show: true, // to display the alert true/false
     type: "success", // Receive success or error
   })
 );
@@ -127,7 +127,7 @@ Also this modal use a custom hook.
         isOpen={isOpenDeleteModal}
         closeModal={closeDeleteModal}
       >
-        JSX STRUCTURE HERE // Structure tha receive the children prop to render custom jsx or html
+        JSX STRUCTURE HERE // Structure that receive the children prop to render custom jsx or html
         </div>
       </Modal>
 
@@ -144,4 +144,4 @@ The project uses a license of type [ISC](https://opensource.org/licenses/ISC)
 ## Additional Comments
 
 No other page was added to see the details of the TODO.
-This because the modal could be reused to edit the TODO and the details were already painted in the sidebar of the design, so I did not I did not see optimal create another component to see these details, therefore the router was not used since everything was rendered on the same page.
+This because the modal could be reused to edit the TODO and the details were already painted in the sidebar of the design, so I did not see optimal create another component to see these details, therefore the router was not used since everything was rendered on the same page.
