@@ -1,6 +1,6 @@
 # TODO Frontend Side
 
-Este proyecto se llevó a cabo con el fin de crear la parte frontend de la prueba de **Addika**.
+This project was carried out in order to create the frontend part of the **Addika** test.
 
 ## Prerequisites
 
