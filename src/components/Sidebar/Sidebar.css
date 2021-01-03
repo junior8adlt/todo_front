@@ -55,3 +55,21 @@
 .sidebar-footer .sidebar-buttons svg {
   color: var(--main-blue);
 }
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 480px) {
+  .sidebar {
+    width: 365px;
+  }
+  .sidebar-footer .sidebar-buttons {
+    top: 10%;
+  }
+}
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 370px) {
+  .sidebar {
+    width: 300px;
+  }
+  .sidebar-footer .sidebar-buttons {
+    top: 2%;
+  }
+}

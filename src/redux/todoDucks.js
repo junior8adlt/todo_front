@@ -1,5 +1,8 @@
 import axios from "axios";
 import moment from "moment";
+
+//API URL
+const apiUrl = "http://localhost:4000/v1/";
 //Constantes
 const data = {
   todos: [],
@@ -61,7 +64,8 @@ export default function todoReducer(state = data, action) {
 
 export const getAllTodos = () => async (dispatch, getState) => {
   try {
-    const resp = await axios.get(`http://localhost:4000/v1/todos`);
+    const resp = await axios.get(`${apiUrl}/todos`);
+    console.log(url);
     dispatch({
       type: GET_TODOS,
       payload: resp.data.todosResults,
@@ -104,7 +108,7 @@ export const createTodo = (params, date) => async (dispatch, getState) => {
   try {
     const resp = await axios({
       method: "post",
-      url: `http://localhost:4000/v1/todos`,
+      url: `${apiUrl}/todos`,
       data: params,
     });
 
@@ -122,7 +126,7 @@ export const updateCompleted = (todo) => async (dispatch, getState) => {
     const todos = getState().todos.todos;
     await axios({
       method: "patch",
-      url: `http://localhost:4000/v1/todos/${+todo.id}`,
+      url: `${apiUrl}/todos/${+todo.id}`,
       data: {
         completed: !todo.completed,
       },
@@ -150,7 +154,7 @@ export const updateTodo = (params) => async (dispatch, getState) => {
     const todoSelected = getState().todos.todoSelected;
     await axios({
       method: "put",
-      url: `http://localhost:4000/v1/todos/${+todoSelected.id}`,
+      url: `${apiUrl}/todos/${+todoSelected.id}`,
       data: params,
     });
     const editArray = todos.map((item) =>
@@ -176,7 +180,7 @@ export const deleteTodo = (todo) => async (dispatch, getState) => {
     const todos = getState().todos.todos;
     await axios({
       method: "delete",
-      url: `http://localhost:4000/v1/todos/${+todo.id}`,
+      url: `${apiUrl}/todos/${+todo.id}`,
     });
     dispatch({
       type: DELETE_TODO,

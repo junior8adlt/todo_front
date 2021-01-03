@@ -37,3 +37,9 @@
     justify-content: flex-start !important;
   }
 }
+
+@media only screen and (min-device-width: 300px) and (max-device-width: 370px) {
+  .modal__dialog {
+    width: 330px;
+  }
+}
