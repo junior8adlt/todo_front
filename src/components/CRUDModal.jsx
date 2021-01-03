@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Modal from "./Modal/Modal";
 import { createTodo, updateTodo } from "../redux/todoDucks";
 import { useDispatch } from "react-redux";
-import { closeSidebar, showGeneralAlert } from "../redux/generalDucks";
+import { closeSidebar } from "../redux/generalDucks";
 
 const CRUDModal = ({
   isOpenModal,
@@ -74,23 +74,11 @@ const CRUDModal = ({
         }
 
         await dispatch(createTodo(params, filterDate));
-        dispatch(
-          showGeneralAlert({
-            msg: "TODO created successful",
-            show: true,
-            type: "success",
-          })
-        );
+
         closeAndCleanModal();
       }
     } catch (error) {
-      dispatch(
-        showGeneralAlert({
-          msg: `${error}`,
-          show: true,
-          type: "success",
-        })
-      );
+      console.log(error);
     }
   };
 

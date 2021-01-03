@@ -8,7 +8,7 @@ import {
   filterByDate,
   setSelectedTodo,
 } from "../../redux/todoDucks";
-import { openSidebar, showGeneralAlert } from "../../redux/generalDucks";
+import { openSidebar } from "../../redux/generalDucks";
 import {
   CheckCircle,
   CheckCircleFill,
@@ -27,23 +27,6 @@ const Todos = () => {
   const [isOpenModal, openModal, closeModal] = useModal();
   useEffect(async () => {
     await dispatch(getAllTodos());
-    if (allTodos) {
-      dispatch(
-        showGeneralAlert({
-          msg: "TODOS loaded successful",
-          show: true,
-          type: "success",
-        })
-      );
-    } else {
-      dispatch(
-        showGeneralAlert({
-          msg: "Something goes wrong...",
-          show: true,
-          type: "error",
-        })
-      );
-    }
   }, [dispatch]);
 
   const renderTodos = (todo) => {

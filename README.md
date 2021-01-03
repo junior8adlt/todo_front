@@ -54,7 +54,6 @@ For the redux we use the **Ducks** Structure to have everything (reducers, types
 │  │  ├─ css/            # General Styles
 │  │  ├─ fonts/          # Fonts used in this project
 │  ├─ components/        # Components
-│  │  ├─ Alert/          # Alert component
 │  │  ├─ Modal/          # Custom modal component
 │  │  ├─ Sidebar/        # Custom sidebar
 │  │  ├─ Todos/          # Component that render the todo list
@@ -65,7 +64,7 @@ For the redux we use the **Ducks** Structure to have everything (reducers, types
 │  │  └─ …               # Documentation files
 │  ├─ redux/             # Redux folder
 │  │  ├─ store           # Store for redux
-│  │  ├─ generalDucks    # Duck for the general variables (alerts, sidebar interaction)
+│  │  ├─ generalDucks    # Duck for the general variables (sidebar interaction)
 │  │  ├─ todoDucks       # Duck for all the functionality of the TODO (endpoints)
 |  |
 |  |
@@ -81,27 +80,6 @@ For the redux we use the **Ducks** Structure to have everything (reducers, types
 ```
 
 ## Reusable Components
-
-### Alert
-
-Files:
-
-- Alert.jsx
-- Alert.css
-
-This component works as a floating alert.
-
-This alert works through redux to activate it, the general duck must be imported and in this way it is called
-
-```javascript
-dispatch(
-  showGeneralAlert({
-    msg: "TODOS loaded successful", //Message to display
-    show: true, // to display the alert true/false
-    type: "success", // Receive success or error
-  })
-);
-```
 
 ### Modal
 
