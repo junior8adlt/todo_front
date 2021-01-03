@@ -45,6 +45,10 @@ To create a static instance of this project, run the following task:
 For the redux we use the **Ducks** Structure to have everything (reducers, types, actions) in the same file and be optimize
 [Ducks](https://github.com/erikras/ducks-modular-redux)
 
+## Documentation
+
+At the root of the project there is a folder with the name of **doc** in which there is User Manual explaining how the project works
+
 ## Repo structure
 
 ```
