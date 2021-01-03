@@ -80,6 +80,59 @@ For the redux we use the **Ducks** Structure to have everything (reducers, types
 └─ README.md             # This file
 ```
 
+## Reusable Components
+
+### Alert
+
+Files:
+
+- Alert.jsx
+- Alert.css
+
+This component works as a floating alert.
+
+This alert works through redux to activate it, the general duck must be imported and in this way it is called
+
+```javascript
+dispatch(
+  showGeneralAlert({
+    msg: "TODOS loaded successful", //Message to display
+    show: true, // to display the aler true/false
+    type: "success", // Receive success or error
+  })
+);
+```
+
+### Modal
+
+Files:
+
+- Modal.jsx
+- Modal.css
+
+This component works as a floating Modal.
+
+This Modal receives the following props and works as a component to which the desired structure can be given, thanks to the [children prop](https://codeburst.io/a-quick-intro-to-reacts-props-children-cb3d2fce4891)
+Also this modal use a custom hook.
+
+```javascript
+  const [isOpenModal, openModal, closeModal] = useModal(); // custom hook
+  PROPS
+  title //Is the title that display in the top of the modal
+  isOpen // Boolean prop that determinate if the modal will be open o hide
+  closeModal // Function prop that hide the modal
+  Example
+<Modal
+        title='Attention!'
+        isOpen={isOpenDeleteModal}
+        closeModal={closeDeleteModal}
+      >
+        JSX STRUCTURE HERE // Structure tha receive the children prop to render custom jsx or html
+        </div>
+      </Modal>
+
+```
+
 ## License
 
 The project uses a license of type [ISC](https://opensource.org/licenses/ISC)
