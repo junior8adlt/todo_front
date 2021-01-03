@@ -65,7 +65,6 @@ export default function todoReducer(state = data, action) {
 export const getAllTodos = () => async (dispatch, getState) => {
   try {
     const resp = await axios.get(`${apiUrl}/todos`);
-    console.log(url);
     dispatch({
       type: GET_TODOS,
       payload: resp.data.todosResults,

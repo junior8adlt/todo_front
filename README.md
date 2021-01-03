@@ -1,70 +1,94 @@
-# Getting Started with Create React App
+# TODO Frontend Side
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto se llevó a cabo con el fin de crear la parte frontend de la prueba de **Addika**.
 
-## Available Scripts
+## Prerequisites
 
-In the project directory, you can run:
+To run the server it is necessary to have installed:
 
-### `npm start`
+- **NodeJS** in the version **12.18.x** [NodeJs](https://nodejs.org/en/blog/release/v12.18.4/).
+- **NPM** in the version **6.14.x**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+To get the project up and running, and view components in the browser, complete the following steps:
 
-### `npm test`
+1. Clone this repo: `git clone https://github.com/junior8adlt/todo_front.git` (HTTPS)
+2. Install project dependancies: `npm install`
+3. Start the server: `npm run start`
+4. Open your browser and visit <http://localhost:3000>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Creating a static build
 
-### `npm run build`
+To create a static instance of this project, run the following task:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `npm run build`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Package               | Info                                                |
+| --------------------- | --------------------------------------------------- |
+| axios                 | https://www.npmjs.com/package/axios                 |
+| bootstrap             | https://www.npmjs.com/package/bootstrap             |
+| jquery                | https://www.npmjs.com/package/jquery                |
+| moment                | https://www.npmjs.com/package/moment                |
+| popper.js             | https://www.npmjs.com/package/@popperjs/core        |
+| react-bootstrap-icons | https://www.npmjs.com/package/react-bootstrap-icons |
+| react-moment          | https://www.npmjs.com/package/react-moment          |
+| react-redux           | https://www.npmjs.com/package/react-redux           |
+| redux                 | https://www.npmjs.com/package/redux                 |
+| redux-devtool         | https://www.npmjs.com/package/redux-devtools        |
+| redux-thunk           | https://www.npmjs.com/package/redux-thunk           |
 
-### `npm run eject`
+## Redux Structure
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+For the redux we use the **Ducks** Structure to have everything (reducers, types, actions) in the same file and be optimize
+[Ducks](https://github.com/erikras/ducks-modular-redux)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Repo structure
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```
+/
+├─ src/
+│  ├─ assets/            # Assets
+│  │  ├─ css/            # General Styles
+│  │  ├─ fonts/          # Fonts used in this project
+│  ├─ components/        # Components
+│  │  ├─ Alert/          # Alert component
+│  │  ├─ Modal/          # Custom modal component
+│  │  ├─ Sidebar/        # Custom sidebar
+│  │  ├─ Todos/          # Component that render the todo list
+│  │  ├─ CRUDModal       # Component for a crud todo
+│  │
+│  ├─ hooks/             # Custom hooks
+│  │  ├─ useModal/       # Custom hook for the modals
+│  │  └─ …               # Documentation files
+│  ├─ redux/             # Redux folder
+│  │  ├─ store           # Store for redux
+│  │  ├─ generalDucks    # Duck for the general variables (alerts, sidebar interaction)
+│  │  ├─ todoDucks       # Duck for all the functionality of the TODO (endpoints)
+|  |
+|  |
+├─ App                   # Main render component
+├─ index.css             # Styles for the body html
+│
+├─ index.js              # Main render functionality
+├─ .gitignore            # List of files and folders not tracked by Git
+├─ .eslintrc             # Linting preferences for JavasScript
+├─ LICENSE               # License information for this project
+├─ package.json          # Project manifest
+└─ README.md             # This file
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## License
 
-## Learn More
+The project uses a license of type [ISC](https://opensource.org/licenses/ISC)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+[Alberto Ochoa](https://www.linkedin.com/in/alberto-ochoa-de-la-torre-340410171/)
 
-### Code Splitting
+## Additional Comments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+No other page was added to see the details of the TODO.
+This because the modal could be reused to edit the TODO and the details were already painted in the sidebar of the design, so I did not I did not see optimal create another component to see these details, therefore the router was not used since everything was rendered on the same page.
