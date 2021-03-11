@@ -86,6 +86,9 @@ textarea {
   border: 1.5px solid $normal-input-border;
   transition: 0.1s all ease-in;
   outline: none;
+  height: 150px;
+  max-height: 150px;
+  min-height: 150px;
 
   &:hover {
     border: 1.5px solid $hover-outline-blue;
