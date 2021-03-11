@@ -1,10 +1,10 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 
-import todoReducer from "./todoDucks";
-import generalReducer from "./generalDucks";
+import {todosReducer} from "./reducers/todosReducer";
+import {generalReducer} from "./reducers/generalReducer";
 const rootReducer = combineReducers({
-  todos: todoReducer,
+  todos: todosReducer,
   general: generalReducer,
 });
 

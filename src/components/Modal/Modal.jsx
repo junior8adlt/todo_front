@@ -1,5 +1,4 @@
 import React from "react";
-import "./Modal.css";
 
 const Modal = ({ title, isOpen, closeModal, children }) => {
   const handeModalDialogClick = (e) => {
@@ -7,7 +6,7 @@ const Modal = ({ title, isOpen, closeModal, children }) => {
   };
   return (
     <div
-      className={`dynamic-modal ${isOpen && "modal-isopen"}`}
+      className={`dynamic__modal ${isOpen && "modal__isopen"}`}
       onClick={closeModal}
     >
       <div className='modal__dialog' onClick={handeModalDialogClick}>

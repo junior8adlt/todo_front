@@ -1,5 +1,4 @@
 import React from "react";
-import "./Todos.css";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import {
@@ -7,8 +6,8 @@ import {
   updateCompleted,
   filterByDate,
   setSelectedTodo,
-} from "../../redux/todoDucks";
-import { openSidebar } from "../../redux/generalDucks";
+} from "../../redux/actions/todosActions";
+import { openSidebar } from "../../redux/actions/generalActions";
 import {
   CheckCircle,
   CheckCircleFill,
@@ -64,7 +63,7 @@ const Todos = () => {
   return (
     <div className='todos'>
       <h1 className='mb-2'>My Tasks</h1>
-      <div className='table-responsive todos-table'>
+      <div className='table-responsive todos__table'>
         <div className='row justify-content-between mb-3 align-items-center'>
           <div className='col-md-4 col-sm-12 col-xl-4'>
             <h4>Tasks</h4>

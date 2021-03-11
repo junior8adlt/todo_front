@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from "react";
-import "./Sidebar.css";
 import { X, Trash, Pencil } from "react-bootstrap-icons";
 import { useSelector, useDispatch } from "react-redux";
-import { closeSidebar } from "../../redux/generalDucks";
-import { deleteTodo, updateCompleted } from "../../redux/todoDucks";
+import { closeSidebar } from "../../redux/actions/generalActions";
+import { deleteTodo, updateCompleted } from "../../redux/actions/todosActions";
 import Moment from "react-moment";
 import Modal from "../Modal/Modal";
 import useModal from "../../hooks/useModal";
@@ -36,13 +35,13 @@ function Sidebar({ todoObject }) {
 
   return (
     <div className={`sidebar ${isSidebarOpen && "active"}`}>
-      <div className='sidebar-header'>
+      <div className='sidebar__header'>
         <X
-          className='close-sidebar pointer'
+          className='close__sidebar pointer'
           onClick={() => dispatch(closeSidebar())}
         />
       </div>
-      <div className='sidebar-content'>
+      <div className='sidebar__content'>
         <h2>{todoObject ? todoObject.title : "No Title"}</h2>
         <div className='row w-100'>
           <div className='col-md-12 mt-3'>
@@ -56,7 +55,7 @@ function Sidebar({ todoObject }) {
               <option value={true}>Completed</option>
             </select>
 
-            <div className='text-content mt-5'>
+            <div className='text__content mt-5'>
               <div className='created'>
                 <p className='bolded'>Created</p>
                 <p>
@@ -85,8 +84,8 @@ function Sidebar({ todoObject }) {
           </div>
         </div>
       </div>
-      <div className='sidebar-footer'>
-        <div className='sidebar-buttons'>
+      <div className='sidebar__footer'>
+        <div className='sidebar__buttons'>
           <button className='cancel-btn' onClick={openModal}>
             <Pencil /> Edit
           </button>

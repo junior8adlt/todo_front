@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Modal from "./Modal/Modal";
-import { createTodo, updateTodo } from "../redux/todoDucks";
+import { createTodo, updateTodo } from "../redux/actions/todosActions";
 import { useDispatch } from "react-redux";
-import { closeSidebar } from "../redux/generalDucks";
+import { closeSidebar } from "../redux/actions/generalActions";
 
 const CRUDModal = ({
   isOpenModal,
@@ -37,7 +37,7 @@ const CRUDModal = ({
     }
   };
 
-  const createEdit = async (e) => {
+  const createEdit = (e) => {
     e.preventDefault();
     try {
       const params = {
@@ -57,7 +57,7 @@ const CRUDModal = ({
         } else {
           setErrorDesc(null);
         }
-        await dispatch(updateTodo(params));
+         dispatch(updateTodo(params));
         closeAndCleanModal();
       } else {
         if (!title.trim()) {
@@ -73,7 +73,7 @@ const CRUDModal = ({
           setErrorDesc(null);
         }
 
-        await dispatch(createTodo(params, filterDate));
+         dispatch(createTodo(params, filterDate));
 
         closeAndCleanModal();
       }

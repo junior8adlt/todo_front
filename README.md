@@ -39,6 +39,7 @@ To create a static instance of this project, run the following task:
 | redux                 | https://www.npmjs.com/package/redux                 |
 | redux-devtool         | https://www.npmjs.com/package/redux-devtools        |
 | redux-thunk           | https://www.npmjs.com/package/redux-thunk           |
+| node-sass             | https://www.npmjs.com/package/node-sass             |
 
 ## Redux Structure
 
@@ -55,7 +56,7 @@ At the root of the project there is a folder with the name of **doc** in which t
 /
 ├─ src/
 │  ├─ assets/            # Assets
-│  │  ├─ css/            # General Styles
+│  │  ├─ css/            # Fonts General Styles
 │  │  ├─ fonts/          # Fonts used in this project
 │  ├─ components/        # Components
 │  │  ├─ Modal/          # Custom modal component
@@ -73,9 +74,10 @@ At the root of the project there is a folder with the name of **doc** in which t
 │  │  ├─ generalDucks    # Duck for the general variables (sidebar interaction)
 │  │  ├─ todoDucks       # Duck for all the functionality of the TODO (endpoints)
 |  |
+|  │  ├─ styles/         # Component Styles & Styles settings (SASS) 
+|  |
 |  |
 ├─ App                   # Main render component
-├─ index.css             # Styles for the body html
 │
 ├─ index.js              # Main render functionality
 ├─ .gitignore            # List of files and folders not tracked by Git
